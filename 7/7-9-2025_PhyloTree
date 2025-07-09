@@ -1,0 +1,27 @@
+def print_evolutionary_tree():
+    tree = """
+Vertebrates  
+├── Cartilaginous Fish (Class: Chondrichthyes)  
+│   └── Shark  
+│  
+└── Bony Fish (Class: Actinopterygii)  
+    ├── Cyprinidae (Carp-like freshwater fish)  
+    │   ├── Carp  
+    │   └── Zebrafish  
+    │  
+    ├── Cichlidae  
+    │   └── Tilapia  
+    │  
+    ├── Salmonidae  
+    │   └── Salmon  
+    │  
+    ├── Scombridae  
+    │   └── Mackerel  
+    │  
+    ├── Lophiiformes (Deep-sea, bioluminescent fish)  
+        └── Anglerfish  
+    """
+    print(tree)
+
+# Call the function
+print_evolutionary_tree()
