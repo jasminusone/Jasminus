@@ -1,0 +1,33 @@
+import matplotlib.pyplot as graph
+import numpy as np
+
+# DATA
+temps = [100.0, 0.0, 20.56, -19.6]
+x_val = [384725.218, 380319.264, 380392.228, 354411.775]
+
+# SCATTER PLOT
+graph.figure(figsize=(7,5))
+graph.scatter(temps, x_val, color="blue", label="Data Points")
+
+# LINERPLOT: m (slope) and b (intercept)
+m, b = np.polyfit(temps, x_val, 1)
+
+# CREATE FIT LINE
+temp_range = np.linspace(-30, 110, 200)
+graph.plot(temp_range, m*temp_range + b, color="green", linestyle="--",
+           label=f"Fit: y={m:.1f}x + {b:.1f}")
+
+# LABELS AND TITLES
+graph.title("Ideal Gas Thermometer: x vs Temperature")
+graph.xlabel("Temperature (°C)")
+graph.ylabel("x = p(V+U/pr) (mmHg·cm**3)")
+
+graph.grid(True)
+graph.legend()
+graph.show()
+
+# Print results
+print("m (slope):", m)
+print("b (intercept):", b)
+print("Estimated Absolute Zero (°C):", -b/m)
+
